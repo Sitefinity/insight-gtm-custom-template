@@ -31,6 +31,11 @@ ___TEMPLATE_PARAMETERS___
 
 [
   {
+    "type": "LABEL",
+    "name": "label3",
+    "displayName": "\u003cdiv\u003e\u003cstrong\u003eHow to configure:\u003c/strong\u003e \u003ca href\u003d\"https://www.progress.com/documentation/sitefinity-cms/insight/google-tag-manager\"\u003ehttps://www.progress.com/documentation/sitefinity-cms/insight/google-tag-manager\u003c/a\u003e\u003c/div\u003e\u003cbr /\u003e"
+  },
+  {
     "type": "CHECKBOX",
     "name": "usedForSfSiteWithSdk",
     "checkboxText": "Use this tag only on Sitefinity CMS sites",
@@ -136,6 +141,21 @@ ___TEMPLATE_PARAMETERS___
     "valueValidators": [
       {
         "type": "NON_EMPTY"
+      }
+    ]
+  },
+  {
+    "type": "TEXT",
+    "name": "crossDomainTrackingEntries",
+    "displayName": "Domains for cross-domain tracking",
+    "simpleValueType": true,
+    "help": "A comma separated list of domain names to be tracked. For example, mydomain.com, example.com\n\u003cbr /\u003e\n\u003cbr /\u003e\nTo ensure consistent cross-domain tracking, at least one interaction must have been reported already for the site. For example, you may use a page view trigger. For more information click this \u003ca href\u003d\"https://www.progress.com/documentation/sitefinity-cms/insight/google-tag-manager\"\u003elink\u003c/a\u003e.",
+    "canBeEmptyString": true,
+    "enablingConditions": [
+      {
+        "paramName": "usedForSfSiteWithSdk",
+        "paramValue": true,
+        "type": "NOT_EQUALS"
       }
     ]
   },
@@ -263,7 +283,7 @@ const aliasInWindow = require('aliasInWindow');
 const injectScript = require('injectScript');
 const queryPermission = require('queryPermission');
 const productName = 'Sitefinity Insight';
-const sdkUrl = 'https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.5.js';
+const sdkUrl = 'https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.14.js';
 const bridgeScriptUrl = 'https://cdn.insight.sitefinity.com/sdk/gtm-bridge-latest.min.js';
 
 log('data =', data);
@@ -274,7 +294,7 @@ log(productName + ': Loading script from ' + sdkUrl);
 const onSuccess = () => {
   log(productName + ': Bridge script loaded successfully!');
   callInWindow(
-    'sfInsightCreateInstance', 
+    'sfInsightCreateInstance',
     [
       data
     ]
@@ -489,6 +509,6 @@ setup: |-
 
 ___NOTES___
 
-Created on 3/21/2022, 11:36:49 AM
+Created on 10/27/2022, 10:35:08 AM
 
 
