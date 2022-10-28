@@ -15,6 +15,11 @@
 homepage: "https://www.progress.com/sitefinity-cms/insight"
 documentation: "https://www.progress.com/documentation/sitefinity-cms/insight/upload-data-through-google-tag-manager#:~:text=With%20Sitefinity%20Insight%2C%20you%20can,data%20when%20your%20tags%20fire."
 versions:
+  - sha: 67b559817841f6db4b9c1d5ef5789d24aaeb112a
+    changeNotes: |2
+      Added cross-domain tracking entries control.
+      Additional tooltips and labels are also added.
+      Tag name change.
   - sha: 16b5e5d31dadaead574f0074e330722c9670299f
     changeNotes: |2
       Added cross-domain tracking entries control.
