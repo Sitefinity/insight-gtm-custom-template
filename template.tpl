@@ -283,7 +283,7 @@ const aliasInWindow = require('aliasInWindow');
 const injectScript = require('injectScript');
 const queryPermission = require('queryPermission');
 const productName = 'Sitefinity Insight';
-const sdkUrl = 'https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.14.js';
+const sdkUrl = 'https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.26.js';
 const bridgeScriptUrl = 'https://cdn.insight.sitefinity.com/sdk/gtm-bridge-latest.min.js';
 
 log('data =', data);
