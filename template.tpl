@@ -67,6 +67,10 @@ ___TEMPLATE_PARAMETERS___
       {
         "value": "https://sg-api.insight.sitefinity.com",
         "displayValue": "Republic of Singapore"
+      },
+      {
+        "value": "https://uae-api.insight.sitefinity.com",
+        "displayValue": "United Arab Emirates"
       }
     ],
     "simpleValueType": true,
@@ -199,6 +203,14 @@ ___TEMPLATE_PARAMETERS___
     "help": "Check this if you want the cookie validation to reset every time the visitor visits the tracked property."
   },
   {
+    "type": "CHECKBOX",
+    "name": "pushCustomEventsToDataLayer",
+    "checkboxText": "Push custom events to GTM data layer",
+    "simpleValueType": true,
+    "defaultValue": false,
+    "help": "Check this if you want custom events to be pushed to the GTM data layer."
+  },
+  {
     "type": "TEXT",
     "name": "predicate",
     "displayName": "Interaction type",
@@ -283,7 +295,7 @@ const aliasInWindow = require('aliasInWindow');
 const injectScript = require('injectScript');
 const queryPermission = require('queryPermission');
 const productName = 'Sitefinity Insight';
-const sdkUrl = 'https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.26.js';
+const sdkUrl = 'https://cdn.insight.sitefinity.com/sdk/sitefinity-insight-client.min.3.1.54.js';
 const bridgeScriptUrl = 'https://cdn.insight.sitefinity.com/sdk/gtm-bridge-latest.min.js';
 
 log('data =', data);
